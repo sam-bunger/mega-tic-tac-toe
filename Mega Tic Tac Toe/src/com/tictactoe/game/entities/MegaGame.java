@@ -197,12 +197,17 @@ public class MegaGame {
 	
 	public int checkWinner(int row, int col, int xo){
 		
+		if(moveCount == (size*size)){
+			return 2;
+		}
+		
 		//check column
 		for(int i = 0; i < size; i++){
 			if(game[row][i].getFinished() != xo){
 				break;
 			}
 			if(i == size-1){
+				moveCount++;
 				return xo;
 			}
 		}
@@ -212,6 +217,7 @@ public class MegaGame {
 				break;
 			}
 			if(i == size-1){
+				moveCount++;
 				return xo;
 			}
 		}
@@ -222,6 +228,7 @@ public class MegaGame {
 					break;
 				}
 				if(i == size-1){
+					moveCount++;
 					return xo;
 				}
 			}
@@ -233,13 +240,10 @@ public class MegaGame {
 					break;
 				}
 				if(i == size-1){
+					moveCount++;
 					return xo;
 				}
 			}
-		}
-		 
-		if(moveCount == (size*size)){
-			return 2;
 		}
 		
 		return -1;

@@ -25,7 +25,6 @@ public class SinglePlayerState extends State{
 		if(game.getTurn() == AIXO){
 			switch(difficulty){
 				case 0: AITurnEasy();
-				case 1: AITurnIntermediate();
 			}
 		}
 	}
@@ -59,6 +58,9 @@ public class SinglePlayerState extends State{
 		}
 		
 		int randomNum = (int)(Math.random()*countSpaces);
+		if(randomNum != 0){
+			randomNum--;
+		}
 		countSpaces = 0;
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
@@ -68,22 +70,17 @@ public class SinglePlayerState extends State{
 				
 				for(int l = 0; l < 3; l++){
 					for(int m = 0; m < 3; m++){
-						if(TicGame[l][m] == -1){
-							countSpaces++;
-						}
-						if(countSpaces == randomNum){
-							game.doTurn(i, j, l, m);
-						
-							return;
+						if(TicGame[m][l] == -1){
+							if(countSpaces < randomNum){
+								countSpaces++;
+							}else{
+								game.doTurn(i, j, l, m);
+								return;
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-	
-	public void AITurnIntermediate(){
-		
-	}
-
 }
