@@ -72,10 +72,8 @@ public class SinglePlayerState extends State{
 							countSpaces++;
 						}
 						if(countSpaces == randomNum){
-							System.out.println("AI just went");
-							if(!game.doTurn(i, j, l, m)){
-								AITurnEasy();
-							}
+							game.doTurn(i, j, l, m);
+						
 							return;
 						}
 					}

@@ -99,7 +99,6 @@ public class MegaGameSP{
 		if(Gdx.input.justTouched()){
 			int[] a = getClickedBox();
 			if(a.length != 1){
-				System.out.println("Player just went");
 				boolean works;
 				do{
 					works = doTurn(a[0], a[1], a[2], a[3]);
