@@ -14,7 +14,7 @@ public class DifficultyState extends State{
 	
 	private int currentChoice;
 	
-	private String[] options = {"Easy", "Intermediate", "Back"};
+	private String[] options = {"Intermediate", "Easy", "Back"};
 
 	public DifficultyState(GameStateManager gsm) {
 		super(gsm);

@@ -11,7 +11,6 @@ public class DesktopLauncher {
 		config.height = TicTacToe.HEIGHT * TicTacToe.SCALE;
 		config.title = TicTacToe.TITLE;
 		
-		
 		new LwjglApplication(new TicTacToe(), config);
 	}
 }

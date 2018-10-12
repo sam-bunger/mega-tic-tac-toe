@@ -180,7 +180,6 @@ public class TicTacGame {
 					if(currentTurn == 1){
 						sb.draw(X, x + ((j)*spaceSize) + 10, y + ((i)*spaceSize) + 10);
 					}
-	
 				}
 			}
 		}
